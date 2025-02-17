@@ -1,11 +1,5 @@
 def solution(n):
-    answer = ""
-    li = [i for i in str(n)]
+    ls = list(str(n))
+    ls.sort(reverse = True)
     
-    li.sort()
-    li = li[::-1]
-    
-    for k in li:
-        answer += k
-    
-    return int(answer)
+    return int(''.join(ls))
