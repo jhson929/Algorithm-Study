@@ -1,3 +1,3 @@
 a, b = map(int, input().strip().split(' '))
-for i in range(b):
-    print("*" * a)
+# 최적화
+print(("*" * a + '\n') * b)
