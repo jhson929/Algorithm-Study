@@ -1,8 +1,8 @@
 def solution(arr):
-    if len(arr) <= 2:
+    if len(arr) <= 1:
         return [-1]
     
-    min_i = arr.index(min(arr))
-    del arr[min_i]
+    min_value = arr[arr.index(min(arr))]
+    arr.remove(min_value)
     
     return arr
