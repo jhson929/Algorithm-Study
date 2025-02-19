@@ -1,5 +1,3 @@
 def solution(s):
-    li = [ss for ss in s]
-    li.sort(reverse = True)
-    
-    return "".join(li)
+    # 최적화
+    return "".join(sorted(s, reverse=True))
