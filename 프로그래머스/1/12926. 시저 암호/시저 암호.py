@@ -3,27 +3,12 @@
 # 공백 : 32
 
 def solution(s, n):  
-    answer = ""
-    i = 0
+    s = list(s)
     
-    while i < len(s):
-        if s[i] == " ":
-            answer += " "
-            i += 1
-            continue
+    for i in range(len(s)):
+        if s[i].isupper():
+            s[i] = chr((ord(s[i]) - ord('A') + n) % 26 + ord('A'))
+        elif s[i].islower():
+            s[i] = chr((ord(s[i]) - ord('a') + n) % 26 + ord('a'))
             
-        ss = ord(s[i]) + n
-        
-        # 대소문자 범위
-        upper = ord(s[i]) >= 65 and ord(s[i]) <= 90
-        lower = ord(s[i]) >= 97 and ord(s[i]) <= 122
-        
-        if (upper and ss > 90) or (lower and ss > 122):
-            ss -= 26
-        
-        answer += chr(ss)
-        i += 1
-    
-    return answer
-            
-        
+    return "".join(s)
